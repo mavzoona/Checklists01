@@ -7,8 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-    @IBOutlet weak var greeting: UILabel!
+class MainViewContriller: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
