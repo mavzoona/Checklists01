@@ -25,10 +25,14 @@ class MainViewContriller: UITableViewController {
         return groups.count
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let group: CheckListGroup = groups[indexPath.row]
-        let cell = UITableViewCell()
-        cell.textLabel?.text = group.title
+        
+        let group = groups[indexPath.row]
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "GroupCell", for: indexPath) as! GroupTableViewCell
+        cell.titleLabel.text = group.title
+        //cell.imageView = UIImage(named: group.imageName)
         return cell
+        
     }
 }
 
