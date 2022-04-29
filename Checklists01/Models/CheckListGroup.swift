@@ -10,4 +10,5 @@ import Foundation
 struct CheckListGroup {
     let  title: String
     let imageName: String
+    var items: [ChecklistItem]
 }

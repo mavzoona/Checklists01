@@ -8,14 +8,7 @@
 import UIKit
 
 class GroupDetailsTableViewController: UITableViewController {
-    var items: [ChecklistItem] = [
-        ChecklistItem (isChecked: true, name: "See Parvina"),
-        ChecklistItem (isChecked: true, name: "Brush teeth"),
-        ChecklistItem (isChecked: false, name: "Learn IOS development"),
-        ChecklistItem (isChecked: false, name: "Soccer practice"),
-        ChecklistItem (isChecked: true, name: "Eat ice cream"),
-        ChecklistItem (isChecked: false, name: "Dance in the rain")
-    ]
+    var items: [ChecklistItem] = []
     
     
     override func viewDidLoad() {
@@ -41,7 +34,15 @@ class GroupDetailsTableViewController: UITableViewController {
 
         return cell
     }
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GroupDetailsToAddItem",
+             let vc = segue.destination as? AddItemTableViewController,
+           let indexPath =
+            tableView.indexPathsForSelectedRows?.first{
+            vc.title = "Edit item"
+            vc.item = items[indexPath.row]
+            //items[indexPath.row].name
+        }
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,3 +90,5 @@ class GroupDetailsTableViewController: UITableViewController {
     */
 
 }
+    }
+

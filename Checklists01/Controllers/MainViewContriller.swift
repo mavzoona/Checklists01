@@ -10,10 +10,10 @@ import UIKit
 class MainViewContriller: UITableViewController {
     
     let groups: [CheckListGroup] = [
-        CheckListGroup (title: "Birthdays", imageName: "Birthdays"),
-        CheckListGroup(title: "Groceries", imageName: "Groceries"),
-        CheckListGroup(title: "To do", imageName: "Chores"),
-        CheckListGroup(title: "Business Stuff", imageName: "Folder")
+        CheckListGroup (title: "Birthdays", imageName: "Birthdays", items: [ChecklistItem(isChecked: true, name: "My 20th birthday")]),
+        CheckListGroup(title: "Groceries", imageName: "Groceries", items: [ChecklistItem(isChecked: true, name: "Shirchoy")]),
+        CheckListGroup(title: "To do", imageName: "Chores", items: [ChecklistItem(isChecked: true, name: "See Parvina")]),
+        CheckListGroup(title: "Business Stuff", imageName: "Folder", items: [ChecklistItem(isChecked: true, name: "Eat chokolate")])
     ]
     
     override func viewDidLoad() {
@@ -36,5 +36,15 @@ class MainViewContriller: UITableViewController {
         return cell
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "MainToGroupDetails"{
+            if let vc = segue.destination as? GroupDetailsTableViewController{
+                if let indexPath = tableView.indexPathsForSelectedRows?.first {
+                   vc.items = groups[indexPath.row].items
+        }
+    }
 }
 
+    }
+}
