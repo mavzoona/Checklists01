@@ -28,17 +28,16 @@ class GroupDetailsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItemCell", for: indexPath) as! ItemsTableViewCell
-       var item = items[indexPath.row]
+       let item = items[indexPath.row]
         cell.ItemLabel.text = item.name
-        cell.CheckMark.isHidden = !item.isChecked
+        cell.CheckMark.isHidden = item.isChecked
 
         return cell
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GroupDetailsToAddItem",
              let vc = segue.destination as? AddItemTableViewController,
-           let indexPath =
-            tableView.indexPathsForSelectedRows?.first{
+           let indexPath = tableView.indexPathsForSelectedRows?.first{
             vc.title = "Edit item"
             vc.item = items[indexPath.row]
             //items[indexPath.row].name

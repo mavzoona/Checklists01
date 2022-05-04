@@ -97,7 +97,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="TextFieldCell" destination="11k-ua-Tv8" id="4RV-qJ-ukz"/>
+                                    <outlet property="addTextField" destination="11k-ua-Tv8" id="kkZ-uk-xmr"/>
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SwitchCell" id="S3u-6Z-F4c" customClass="SwitchTableViewCell" customModule="Checklists01" customModuleProvider="target">

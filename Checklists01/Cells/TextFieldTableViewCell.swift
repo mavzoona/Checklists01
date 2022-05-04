@@ -8,8 +8,7 @@
 import UIKit
 
 class TextFieldTableViewCell: UITableViewCell {
-    @IBOutlet weak var TextFieldCell: UITextField!
-    
+    @IBOutlet weak var addTextField: UITextField!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
