@@ -11,7 +11,8 @@ class MainViewContriller: UITableViewController {
     
     let groups: [CheckListGroup] = [
         CheckListGroup (title: "Birthdays", imageName: "Birthdays", items: [ChecklistItem(isChecked: true, name: "My 20th birthday",remindMe: false, dueDate: nil)]),
-        CheckListGroup(title: "Groceries", imageName: "Groceries", items: [ChecklistItem(isChecked: true, name: "Shirchoy",remindMe:true, dueDate:Date())]),
+        CheckListGroup(title: "Groceries", imageName: "Groceries", items: [//ChecklistItem(isChecked: true, name: "Shirchoy",remindMe:true, dueDate:Date())
+                                                                          ]),
         CheckListGroup(title: "To do", imageName: "Chores", items: [ChecklistItem(isChecked: true, name: "See Parvina", remindMe:false, dueDate:Date())]),
         CheckListGroup(title: "Business Stuff", imageName: "Folder", items: [ChecklistItem(isChecked: true, name: "Eat chokolate", remindMe:false, dueDate:nil)])
     ]
@@ -32,7 +33,7 @@ class MainViewContriller: UITableViewController {
         cell.titleLabel.text = group.title
         
         cell.iconView.image = UIImage(named:group.imageName)
-      
+        cell.subtitleLabel.text = group.getRemainings()
         return cell
         
     }
