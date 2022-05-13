@@ -17,6 +17,7 @@
 		D2B4DAE72812CBEE0026B1FA /* GroupDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4DAE62812CBEE0026B1FA /* GroupDetailsTableViewController.swift */; };
 		D2B4DAE92812CE210026B1FA /* ChecklistItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4DAE82812CE210026B1FA /* ChecklistItem.swift */; };
 		D2B4DAEB2812DF0C0026B1FA /* ItemsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B4DAEA2812DF0C0026B1FA /* ItemsTableViewCell.swift */; };
+		D2CFCA5F282E8E0A00ED4F8B /* GroupDetailsProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2CFCA5E282E8E0A00ED4F8B /* GroupDetailsProtocol.swift */; };
 		D2D1A5162816BC8400748AC6 /* DateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1A5152816BC8400748AC6 /* DateTableViewCell.swift */; };
 		D2D1A5182816BCA900748AC6 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1A5172816BCA900748AC6 /* SwitchTableViewCell.swift */; };
 		D2D1A51A2816BCDD00748AC6 /* TextFieldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2D1A5192816BCDD00748AC6 /* TextFieldTableViewCell.swift */; };
@@ -37,6 +38,7 @@
 		D2B4DAE62812CBEE0026B1FA /* GroupDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsTableViewController.swift; sourceTree = "<group>"; };
 		D2B4DAE82812CE210026B1FA /* ChecklistItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistItem.swift; sourceTree = "<group>"; };
 		D2B4DAEA2812DF0C0026B1FA /* ItemsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCell.swift; sourceTree = "<group>"; };
+		D2CFCA5E282E8E0A00ED4F8B /* GroupDetailsProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailsProtocol.swift; sourceTree = "<group>"; };
 		D2D1A5152816BC8400748AC6 /* DateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTableViewCell.swift; sourceTree = "<group>"; };
 		D2D1A5172816BCA900748AC6 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		D2D1A5192816BCDD00748AC6 /* TextFieldTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTableViewCell.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 		D282985B28099D5B00B3C773 /* Checklists01 */ = {
 			isa = PBXGroup;
 			children = (
+				D2CFCA5D282E8DD300ED4F8B /* Protocols */,
 				D2B4DAE52812C8C80026B1FA /* Controllers */,
 				D299F75F2810399E00FE86D1 /* Cells */,
 				D2DC4B9C280D91C500E698F5 /* Models */,
@@ -107,6 +110,14 @@
 				D2D1A51D2816C23800748AC6 /* AddItemTableViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D2CFCA5D282E8DD300ED4F8B /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				D2CFCA5E282E8E0A00ED4F8B /* GroupDetailsProtocol.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		D2DC4B9C280D91C500E698F5 /* Models */ = {
@@ -194,6 +205,7 @@
 				D282986128099D5B00B3C773 /* MainViewContriller.swift in Sources */,
 				D2D1A5162816BC8400748AC6 /* DateTableViewCell.swift in Sources */,
 				D2B4DAE92812CE210026B1FA /* ChecklistItem.swift in Sources */,
+				D2CFCA5F282E8E0A00ED4F8B /* GroupDetailsProtocol.swift in Sources */,
 				D2D1A51A2816BCDD00748AC6 /* TextFieldTableViewCell.swift in Sources */,
 				D2B4DAE72812CBEE0026B1FA /* GroupDetailsTableViewController.swift in Sources */,
 				D282985D28099D5B00B3C773 /* AppDelegate.swift in Sources */,

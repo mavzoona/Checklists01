@@ -8,8 +8,8 @@
 import UIKit
 
 class GroupDetailsTableViewController: UITableViewController {
-    var items: [ChecklistItem] = []
-    
+    var group: CheckListGroup!
+    var delegate: GroupDetailsProtocol? 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,72 +22,43 @@ class GroupDetailsTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return group.items.count
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
        let cell = tableView.dequeueReusableCell(withIdentifier: "ChecklistItemCell", for: indexPath) as! ItemsTableViewCell
-       let item = items[indexPath.row]
+        let item = group.items[indexPath.row]
         cell.ItemLabel.text = item.name
         cell.CheckMark.isHidden = item.isChecked
 
         return cell
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GroupDetailsToAddItem",
              let vc = segue.destination as? AddItemTableViewController,
-           let indexPath = tableView.indexPathsForSelectedRows?.first{
+           let indexPath = tableView.indexPathsForSelectedRows?.first {
             vc.title = "Edit item"
-            vc.item = items[indexPath.row]
+            vc.item = group.items[indexPath.row]
             //items[indexPath.row].name
         }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
     }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        //MARK: - processing of delegation of table or UITableViewDelegate
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+            print("tap on cage \(indexPath.row)")
+        }
+    
+    override func tableView(_ tableView : UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            
+            // delete the info from array
+        group.items.remove(at: indexPath.row)
+        // delet the cell from table
+        tableView.deleteRows(at: [indexPath], with: .automatic )
+        //
+        delegate?.didDeleteItem(at: indexPath.row, with: group.title)
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 
 }
-    }
-
